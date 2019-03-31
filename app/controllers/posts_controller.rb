@@ -28,7 +28,7 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     #render json: PostSerializer.serialize(post)
     render json: post.to_json(only: [:title, :description, :id],
-                              include: [ author: { only: [:name]}])
+      include: [ author: { only: [:name]}])
   end
 
   private
